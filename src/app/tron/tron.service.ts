@@ -23,13 +23,17 @@ export class TronService {
   }
 
   getPowerStatus(): Observable<string> {
-    return this.http.get(`${this.baseUrl}/power`, this.headerOptions).pipe(
-      pluck('body'),
-    );
+    return this.http.get(`${this.baseUrl}/power`, this.headerOptions)
+      .pipe(
+        pluck('body'),
+      );
   }
 
-  updatePower(status: string) {
-    return this.http.post(`${this.baseUrl}/power`, status, this.headerOptions);
+  updatePower(status: string): Observable<string> {
+    return this.http.post(`${this.baseUrl}/power`, status, this.headerOptions)
+      .pipe(
+        pluck('body'),
+      );
   }
 
   updateHue(hue: number){
@@ -37,7 +41,10 @@ export class TronService {
   }
 
   updateBrightness(mode: BrightnessMode){
-    return this.http.post(`${this.baseUrl}/brightness`, mode, this.headerOptions);
+    return this.http.post(`${this.baseUrl}/brightness`, mode, this.headerOptions)
+      .pipe(
+        pluck('body'),
+      );
   }
 
 }

@@ -24,21 +24,24 @@ export class AvengersService {
   }
 
   getPowerStatus(): Observable<string> {
-    return this.http.get(`${this.baseUrl}/power`, this.headerOptions).pipe(
-      pluck('body'),
-    );
+    return this.http.get(`${this.baseUrl}/power`, this.headerOptions)
+      .pipe(
+        pluck('body'),
+      );
   }
 
   getBrightnessStatus(): Observable<string> {
-    return this.http.get(`${this.baseUrl}/brightness`, this.headerOptions).pipe(
-      pluck('body'),
-    );
+    return this.http.get(`${this.baseUrl}/brightness`, this.headerOptions)
+      .pipe(
+        pluck('body'),
+      );
   }
 
   updatePower(status: string) {
-    return this.http.post(`${this.baseUrl}/power`, status, this.headerOptions).pipe(
-      pluck('body'),
-    );
+    return this.http.post(`${this.baseUrl}/power`, status, this.headerOptions)
+      .pipe(
+        pluck('body'),
+      );
   }
 
   updateHue(hue: number) {

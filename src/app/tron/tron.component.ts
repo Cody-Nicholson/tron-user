@@ -12,6 +12,7 @@ import { BrightnessMode, TronService } from './tron.service';
 export class TronComponent implements OnInit {
 
   powerStatus$: Observable<string>;
+  brightnessStatus$: Observable<string>;
   private hueChange$ = new Subject<ColorEvent>();
 
   constructor(public tron: TronService) {
@@ -19,15 +20,11 @@ export class TronComponent implements OnInit {
   }
 
   togglePower(power: string) {
-    this.tron.updatePower(power).subscribe((power) => {
-      console.log('power')
-    });
+    this.powerStatus$ = this.tron.updatePower(power);
   }
 
   setBrightnessMode(mode: BrightnessMode) {
-    this.tron.updateBrightness(mode).subscribe(() => {
-
-    });
+    this.brightnessStatus$ = this.tron.updateBrightness(mode);
   }
 
   onSlide(event: ColorEvent) {
