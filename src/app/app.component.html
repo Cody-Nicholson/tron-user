@@ -1,58 +1,29 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
   <span class="navbar-brand mb-0 h1">Tron User</span>
+
+  <div class="navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li routerLinkActive="active"
+          class="nav-item">
+        <a class="nav-link"
+           routerLink="tron">Tron
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLinkActive="active"
+           routerLink="avengers">Avengers
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container-sm pt-3">
 
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-header">Master Power: {{powerStatus$ | async}}</div>
-        <div class="card-body">
-<!--          <h5 class="card-title"></h5>-->
-          <button
-            class="btn btn-primary mr-3"
-            (click)="togglePower('on')">Turn On
-          </button>
-
-          <button
-            class="btn btn-primary mr-3"
-            (click)="togglePower('off')">Turn Off
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-header">Master Hue</div>
-        <div class="card-body">
-          <color-slider (onChangeComplete)="onSlide($event)"></color-slider>
-          <button (click)="onResetHue()"
-             class="btn btn-primary reset-btn"> Reset
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-header">Master Brightness</div>
-        <div class="card-body">
-          <button
-            class="btn btn-primary mr-3"
-            (click)="setBrightnessMode('low')">Low
-          </button>
-
-          <button
-            class="btn btn-primary mr-3"
-            (click)="setBrightnessMode('normal')">Normal
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 
 </div>
 
-<router-outlet></router-outlet>

@@ -1,0 +1,50 @@
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">Master Power: {{powerStatus$ | async}}</div>
+      <div class="card-body">
+        <!--          <h5 class="card-title"></h5>-->
+        <button
+          class="btn btn-primary mr-3"
+          (click)="togglePower('on')">Turn On
+        </button>
+
+        <button
+          class="btn btn-primary mr-3"
+          (click)="togglePower('off')">Turn Off
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">Master Hue</div>
+      <div class="card-body">
+        <color-slider (onChangeComplete)="onSlide($event)"></color-slider>
+        <button (click)="onResetHue()"
+                class="btn btn-primary reset-btn"> Reset
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">Master Brightness</div>
+      <div class="card-body">
+        <button
+          class="btn btn-primary mr-3"
+          (click)="setBrightnessMode('low')">Low
+        </button>
+
+        <button
+          class="btn btn-primary mr-3"
+          (click)="setBrightnessMode('normal')">Normal
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

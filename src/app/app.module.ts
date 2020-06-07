@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ColorSliderModule } from 'ngx-color/slider';
+import { AvengersModule } from './avengers/avengers.module';
+import { TronModule } from './tron/tron.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { ColorSliderModule } from 'ngx-color/slider';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ColorSliderModule,
+    AvengersModule,
+    TronModule,
   ],
   providers: [],
   bootstrap: [
