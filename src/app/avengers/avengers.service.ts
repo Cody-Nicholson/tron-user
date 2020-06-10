@@ -8,8 +8,7 @@ import { pluck } from 'rxjs/operators';
 })
 export class AvengersService {
 
-  baseUrl = 'http://192.168.2.158';
-  //baseUrl = 'http://192.168.1.102:8266';
+  baseUrl = 'http://192.168.1.101:8267';
 
   headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
 
